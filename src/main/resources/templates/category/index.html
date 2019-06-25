@@ -5,8 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+
     <ul th:object="${categories}">
         <li th:each="category : ${categories}" th:text="${category.name}">Category name goes here</li>
     </ul>
+
+    <a th:href="@{'/category/add/'}">Add Category</a>
+
 </body>
 </html>
