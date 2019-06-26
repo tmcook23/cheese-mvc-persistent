@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<!-- Uses head from fragments -->
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+    <h1 th:text="${title}">Default Title</h1>
+
+    <!-- Uses navigation from fragments -->
+    <nav th:replace="fragments :: navigation"></nav>
+
+    <p th:unless="${menus} and ${menus.size()}">No Menus</p>
+
+    <!-- Each menu in the list links to URL of the form menu/view/{id number} -->
+    <ul>
+        <li th:each="menu : ${menus}">
+            <a th:href="'menu/view/'+ ${menu.id}" th:text="${menu.name}"></a>
+        </li>
+    </ul>
+
+    <!-- Link to the Add Menu page -->
+    <a href="/menu/add">Add Menu</a>
+
+</body>
+</html>
+
+
