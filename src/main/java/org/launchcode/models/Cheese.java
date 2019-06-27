@@ -29,6 +29,7 @@ public class Cheese {
 
     // Part 3: Setting up the other side of the relationship
     @ManyToMany(mappedBy = "cheeses")
+    // SUGGESTION: @ManyToMany(mappedBy = "cheeses",  cascade = CascadeType.ALL)
     private List<Menu> menus;
 
 
