@@ -83,7 +83,11 @@ public class MenuController {
     public String addItem(@ModelAttribute @Valid AddMenuItemForm form, // DataType variablename
                                        Errors errors, Model model) {
 
-        // NEED TO DO ERROR VALIDATION HERE
+        // NEED TO DO ERROR VALIDATION HERE. It might look something like:
+        // if (errors.hasErrors()) {
+        //    model.addAttribute("title", menuToLoad.getName()); MIGHT NEED TO CHANGE VALUE
+        //    return "menu/add-item";
+        // }
 
         Cheese cheese = cheeseDao.findOne(form.getCheeseId());
         Menu menu = menuDao.findOne(form.getMenuId());
