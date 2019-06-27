@@ -28,8 +28,8 @@ public class Cheese {
     private Category category;
 
     // Part 3: Setting up the other side of the relationship
-    @ManyToMany(mappedBy = "cheeses")
-    // SUGGESTION: @ManyToMany(mappedBy = "cheeses",  cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "cheeses", cascade = CascadeType.ALL)
+    // cascade = CascadeType.ALL allows cheese removal feature to work
     private List<Menu> menus;
 
 
