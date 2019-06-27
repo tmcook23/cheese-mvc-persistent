@@ -11,7 +11,8 @@
         <!-- Uses navigation from fragments -->
         <nav th:replace="fragments :: navigation"></nav>
 
-        <form method="post" style="max-width:600px;" th:object="${form}">
+        <form method="post" action="/menu/add-item" style="max-width:600px;" th:object="${form}">
+            <!-- Added action above to solve "post method not supported error -->
 
             <div class="form-group">
                 <label th:for="cheeses">Cheeses</label>
